@@ -30,28 +30,30 @@
         <video class="video-slide" src="./video (5).mp4" autoplay loop muted></video>
         <div class="content active">
             <h1>Wonderful.<br><span>Island</span></h1>
-            <p>lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quibusdam.</p>
-            <a href="#" class="btn">Explore</a>
+            <p>Islands conjure dreams of paradise: an escape from the rat race and a perfect patch of sand where you can relax under rustling palms and gaze at a serene blue sea.But not all islands are created the same. The beauty of some is defined more by the sea that surrounds them, which can captivate connoisseurs with its crystalline clarity and thriving coral kingdoms.</p>
+            <a href="#" class="btn">Explore More</a>
         </div>
         <div class="content">
-            <h1>Wonderful.<br><span>Island</span></h1>
-            <p>lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quibusdam.</p>
-            <a href="#" class="btn">Explore</a>
+            <h1>Camping.<br><span>Enjoy</span></h1>
+            <p>camping, recreational activity in which participants take up temporary residence in the outdoors, usually using tents or specially designed or adapted vehicles for shelter.Some like to disconnect from technology and reconnect with nature. Some families go camping to revitalize their relationships, away from all the distractions at home. </p>
+            <a href="#" class="btn">Explore More</a>
         </div>
         <div class="content">
-            <h1>Wonderful.<br><span>Island</span></h1>
-            <p>lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quibusdam.</p>
-            <a href="#" class="btn">Explore</a>
+            <h1>Adventures.<br><span>Off Road</span></h1>
+            <p>An adventure is an exciting experience or undertaking that is typically bold, sometimes risky. Adventures may be activities with some potential for physical danger such as traveling, exploring, skydiving, mountain climbing, scuba diving, river rafting or participating in extreme sports.An adventure is an exciting experience.</p>
+            <a href="#" class="btn">Explore More</a>
         </div>  
         <div class="content">
-            <h1>Wonderful.<br><span>Island</span></h1>
-            <p>lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quibusdam.</p>
-            <a href="#" class="btn">Explore</a>
+            <h1>Road Trip.<br><span>Together</span></h1>
+            <p>A road trip, sometimes spelled roadtrip, is a long-distance journey on the road. Typically, road trips are long distances traveled by automobile. Meandering through the countryside is a great way to relax and find out what it's really like to live in a particular area.  Typically, road trips are long distances traveled by automobile. Meandering through the countryside is a great way to relax and find.</p>
+            <a href="#" class="btn">Explore More</a>
         </div>
         <div class="content">
-            <h1>Wonderful.<br><span>Island</span></h1>
-            <p>lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quibusdam.</p>
-            <a href="#" class="btn">Explore</a>
+            <h1>Feel Nature.<br><span>Relax</span></h1>
+            <p>Earth, rivers, mountains and trees! Silent canyons, babbling creeks and growing green gardens! If you spend time in nature, you’ve probably noticed that you feel happier out there than in here.
+
+                But why? One of the better known theories, the “biophilia hypothesis,” suggests that we love nature because we evolved in it.we love nature because we evolved in it.</p>
+            <a href="#" class="btn">Explore More</a>
         </div>
         <div class="media-icons">
             <a href="#"><i class="fab fa-facebook-f"></i></a>
@@ -66,7 +68,43 @@
             <div class="nav-btn"></div>
           </div>
     </section>
-    <script type="text/javascript"></script>
+    <script type="text/javascript">
+        const menuBtn = document.querySelector(".menu-btn");
+    const navigation = document.querySelector(".navigation");
+
+    menuBtn.addEventListener("click", () => {
+      menuBtn.classList.toggle("active");
+      navigation.classList.toggle("active");
+    });
+    const btns = document.querySelectorAll(".nav-btn");
+    const slides = document.querySelectorAll(".video-slide");
+    const contents = document.querySelectorAll(".content");
+
+    var sliderNav = function(manual){
+      btns.forEach((btn) => {
+        btn.classList.remove("active");
+      });
+
+      slides.forEach((slide) => {
+        slide.classList.remove("active");
+      });
+
+      contents.forEach((content) => {
+        content.classList.remove("active");
+      });
+
+      btns[manual].classList.add("active");
+      slides[manual].classList.add("active");
+      contents[manual].classList.add("active");
+    }
+
+    btns.forEach((btn, i) => {
+      btn.addEventListener("click", () => {
+        sliderNav(i);
+      });
+    });
+
+    </script>
     
 </body>
 </html>
